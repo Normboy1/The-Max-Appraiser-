@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Endpoint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test API Endpoint</h1>
+    <div class="form-group">
+        <label for="apiUrl">API Endpoint:</label>
+        <input type="text" id="apiUrl" value="https://ai-software-appraiser-7maum78a4-normans-projects-b6edc1bd.vercel.app/api/evaluate/idea">
+    </div>
+    
+    <div class="form-group">
+        <label for="idea">Idea:</label>
+        <textarea id="idea" rows="3">Test idea for evaluation</textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="plan">Plan:</label>
+        <textarea id="plan" rows="3">Test implementation plan</textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="roadmap">Roadmap:</label>
+        <textarea id="roadmap" rows="3">Test roadmap details</textarea>
+    </div>
+    
+    <button onclick="testApi()">Test API</button>
+    
+    <h2>Response:</h2>
+    <div id="response">Response will appear here...</div>
+    
+    <script>
+        async function testApi() {
+            const apiUrl = document.getElementById('apiUrl').value;
+            const idea = document.getElementById('idea').value;
+            const plan = document.getElementById('plan').value;
+            const roadmap = document.getElementById('roadmap').value;
+            
+            const responseDiv = document.getElementById('response');
+            responseDiv.textContent = 'Sending request...';
+            
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        idea,
+                        plan,
+                        roadmap,
+                        currency: 'USD'
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                responseDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                responseDiv.textContent = `Error: ${error.message}\n\n${error.stack || ''}`;
+            }
+        }
+    </script>
+</body>
+</html>

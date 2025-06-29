@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaxOSL Apraizer – know your true value</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MaxOSL Apraizer</h1>
+    <p class="tagline">know your true value</p>
+  </header>
+
+  <main>
+    <form id="appraise-form">
+      <label class="question active">
+        What's your idea?
+        <textarea id="idea" required></textarea>
+      </label>
+      <label class="question">
+        What's your plan?
+        <textarea id="plan" required></textarea>
+      </label>
+      <label class="question">
+        How do you plan to move forward?
+        <textarea id="roadmap" required></textarea>
+      </label>
+
+      <label>
+        Currency
+        <select id="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+        </select>
+      </label>
+
+      <button type="submit">Appraise</button>
+    </form>
+
+    <section id="result" class="hidden">
+      <h2>Results</h2>
+      <div id="scores"></div>
+      <p id="explanation"></p>
+      <p id="overall"></p>
+      <p id="valuation"></p>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 MaxOSL</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

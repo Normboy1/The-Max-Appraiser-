@@ -1,0 +1,54 @@
+/* White theme minimal styling */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+header h1 { margin: 0; font-size: 2rem; }
+.tagline { color: #555; margin: 0.25rem 0 0; }
+
+main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+
+.question { opacity: 0; transition: opacity 0.5s ease; }
+.question.active { opacity: 1; }
+
+form label { display: block; margin-bottom: 1rem; font-weight: 600; }
+textarea { width: 100%; min-height: 80px; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+
+/* animation when answered */
+textarea.answered {
+  border-color: #0b5cff;
+  box-shadow: 0 0 6px rgba(11, 92, 255, 0.4);
+}
+
+.weight { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.5rem; margin-top: 0.5rem; }
+.weight input { width: 100%; padding: 0.25rem; }
+
+select, input[type="number"], button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background: #0b5cff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button:hover { background: #084ad1; }
+
+#result { margin-top: 2rem; }
+#result.hidden { display: none; }
+.score-bar { height: 8px; background: #0b5cff; border-radius: 4px; margin-top: 4px; }
+.score-wrapper { margin-bottom: 1rem; }
+
+footer { text-align: center; padding: 1rem 0; border-top: 1px solid #eee; font-size: 0.875rem; color: #666; }

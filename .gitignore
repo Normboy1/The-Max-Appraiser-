@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Node
+node_modules/
+
+# Build outputs
+frontend-vite/dist/
+frontend-svelte/build/
+*.log
+
+# OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Vercel
+.vercel/
+
+# Test / temp files
+*.tmp
+*.swp
+
+# Misc
+coverage/

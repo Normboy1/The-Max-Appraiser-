@@ -1,0 +1,11 @@
+{
+  "name": "ai-software-appraiser",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "vercel-build": "node vercel-build.js"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
