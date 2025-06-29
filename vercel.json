@@ -5,7 +5,7 @@
       "src": "frontend-vite/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "frontend-vite/dist"
+        "distDir": "dist"
       }
     },
     {
